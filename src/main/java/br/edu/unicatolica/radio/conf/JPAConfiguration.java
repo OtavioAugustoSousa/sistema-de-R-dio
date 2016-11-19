@@ -42,9 +42,9 @@ public class JPAConfiguration
    {
       DriverManagerDataSource dataSource = new DriverManagerDataSource();
       dataSource.setDriverClassName("org.postgresql.Driver");
-      dataSource.setUrl("jdbc:postgresql://localhost/DATABASE_NAME");
-      dataSource.setUsername("your username here");
-      dataSource.setPassword("your password here");
+      dataSource.setUrl("jdbc:postgresql://localhost/sysradio");
+      dataSource.setUsername("postgres");
+      dataSource.setPassword("postgres");
       return dataSource;
    }
 
@@ -65,6 +65,7 @@ public class JPAConfiguration
    Properties additionalProperties()
    {
       Properties properties = new Properties();
+      properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
       properties.setProperty("hibernate.hbm2ddl.auto", "update");
       properties.setProperty("hibernate.show_sql", "true");
       return properties;
