@@ -5,9 +5,8 @@
   <div>
     <div class ="container min-container">      
     <h2 class="basic-title">Add</h2>
-      <form:form role="form" cssClass="well" commandName="product" servletRelativeAction="/product/${product.id}" method="POST">
-		
-		<%@include file="form-inputs.jsp" %>
+      <form:form role="form" cssClass="well" commandName="pedidoMusical" servletRelativeAction="/pedidos" method="POST">
+      	<%@include file="form-inputs.jsp" %>
         <button type="submit" class="btn btn-primary">Submit</button>
 
       </form:form>	

@@ -1,21 +1,18 @@
 package br.edu.unicatolica.radio.daos;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 import org.springframework.stereotype.Repository;
-import br.edu.unicatolica.radio.models.PaginatedList;
-import br.edu.unicatolica.radio.models.Category;
 
 @Repository
-public class CategoryDao
+public class UsuarioDao
 {
 
    @PersistenceContext
    private EntityManager manager;
 
-   public List<Category> all()
+   /*public List<Category> all()
    {
       return manager.createQuery("select c from Category c", Category.class).getResultList();
    }
@@ -44,5 +41,5 @@ public class CategoryDao
    {
       return new PaginatorQueryHelper().list(manager, Category.class, page, max);
    }
-
+*/
 }
