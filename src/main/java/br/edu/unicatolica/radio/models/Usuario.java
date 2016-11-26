@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 @Entity
 @Table(name = "usuario")
 public class Usuario implements Serializable {
@@ -57,7 +59,7 @@ public class Usuario implements Serializable {
 		return senha;
 	}
 	public void setSenha(String senha) {
-		this.senha = senha;
+		this.senha = new BCryptPasswordEncoder().encode(senha);
 	}
 	public String getEmail() {
 		return email;

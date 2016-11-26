@@ -58,10 +58,10 @@ small {
 						<td>Oferecimento</td>
 						<td>Ações</td>
 					</tr>
-					<c:forEach items='${pedidos.currentList}' var='pedido'>
+					<c:forEach items='${pedidos}' var='pedido'>
 					<tr>
 						<td>${pedido.idPedido}</td>
-						<td>Nome da Música</td>
+						<td>${pedido.nomeMusica}</td>
 						<td>Nome do Ouvinte</td>
 						<td>Oferecimento</td>
 						<td>Ações</td>

@@ -1,45 +1,48 @@
 package br.edu.unicatolica.radio.daos;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
+import br.edu.unicatolica.radio.models.PaginatedList;
+import br.edu.unicatolica.radio.models.Usuario;
+
 @Repository
-public class UsuarioDao
-{
+public class UsuarioDao {
 
-   @PersistenceContext
-   private EntityManager manager;
+	@PersistenceContext
+	private EntityManager manager;
 
-   /*public List<Category> all()
-   {
-      return manager.createQuery("select c from Category c", Category.class).getResultList();
-   }
+	public List<Usuario> all() {
+		return manager.createQuery("select c from Usuario c", Usuario.class).getResultList();
+	}
 
-   public void save(Category category)
-   {
-      manager.persist(category);
-   }
+	public Usuario getByName(String nome) {
+		return manager.createQuery("select c from Usuario c where c.nomeUsuario = :nome ", Usuario.class)
+				.setParameter("nome", nome).getSingleResult();
+	}
 
-   public Category findById(Integer id)
-   {
-      return manager.find(Category.class, id);
-   }
+	public void save(Usuario usuario) {
+		manager.persist(usuario);
+	}
 
-   public void remove(Category category)
-   {
-      manager.remove(category);
-   }
+	public Usuario findById(Integer id) {
+		return manager.find(Usuario.class, id);
+	}
 
-   public void update(Category category)
-   {
-      manager.merge(category);
-   }
+	public void remove(Usuario usuario) {
+		manager.remove(usuario);
+	}
 
-   public PaginatedList paginated(int page, int max)
-   {
-      return new PaginatorQueryHelper().list(manager, Category.class, page, max);
-   }
-*/
+	public void update(Usuario usuario) {
+		manager.merge(usuario);
+	}
+
+	public PaginatedList paginated(int page, int max) {
+		return new PaginatorQueryHelper().list(manager, Usuario.class, page, max);
+	}
+
 }

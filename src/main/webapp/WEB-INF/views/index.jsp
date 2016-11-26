@@ -6,7 +6,7 @@
   <body>
   <div class="">
     <h3>Adicionar tarefas</h3>
-    <form action="/login" method="post">
+    <form action="login" method="post">
     <label>Login:</label>  
     <input type="text" name="login"/>  
     <label>Senha:</label>
